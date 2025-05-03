@@ -103,5 +103,25 @@ then exit and rerun the QEMU-system-arm .
 
 
 
+************prepare root filesystem :
+we need to use busybox :
+
+-install the source code 
+ busybox-1.36.1.tar.bz2
+
+note :is missing patch .
+
+
+so we need to apply this patch :
+ git apply busybox-1.36.1-no-cbq.patch
+
+there is no defconfiguration because in this case we deal with kernel not the hardware :
+
+
+and then configure the busybox :(cross-compile prefix ,destination path for 'make install '
+execute  those command :
+make and make install 
+
+output :bin ,sbin ,usr 
 
 
