@@ -275,6 +275,32 @@ The contenu of two partitions:
 
 ```
 
+#### Bootscript :
+
+The bootscript is an script that is automatically executed when the boot loader starts, and before
+the OS auto boot process.
+The bootscript allows the user to execute a set of predefined U-Boot commands automatically.
+
+1.First, you need the u-boot-tools installed in your Linux machine:
+
+ ```bash
+sudo apt install u-boot-tools
+```
+
+
+That package provide to us the tool mkimage to convert a text file (.cmd, .txt) file to a bootscript file for U-Boot(boot.scr).
+
+2.create a boot.cmd (text file contains all the  u-boot command :
+
+3.Now we can convert the text file to bootscript with mkimage.
+
+ ```bash
+
+mkimage -T script -n "Bootscript" -C none -d <input_file> <output_file>
+```
+
+
+
 
 
 
